@@ -114,11 +114,34 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
-}
+   var multiplicados = 1;
+   var i = 0;
+   if (arguments.length > 0){
+      while (arguments[i] > 0) {
+       multiplicados *= arguments[i];
+       i++; 
+   }
+   return multiplicados;
+   
+   }else if(arguments === 0){
+     return 0;
+   }
+   return '';
+ }
+ console.log(multiplicarArgumentos(3, 5, 7))
+ console.log(multiplicarArgumentos())
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   let contador = 0
+   
+   for (let i = 0; i < array.length; i++) {
+      if (array[i] > 18) {
+         contador++
+      }
+   }
+   return contador;
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -126,18 +149,52 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   switch (numeroDeDia) {
+      case 1:
+         return 'Es fin de semana'
+      case 2:
+         return 'Es dia laboral'
+      case 3:
+         return 'Es dia laboral'
+      case 4:
+         return 'Es dia laboral'
+      case 5:
+         return 'Es dia laboral'
+      case 6:
+         return 'Es dia laboral'
+      case 7:
+         return 'Es fin de semana'
+      default:
+         return false
+   }
 }
+console.log(diaDeLaSemana())
+
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+const empiezaConNueve = (num) => num.toString()[0] === '9'
+
+console.log(empiezaConNueve(512))
+console.log(empiezaConNueve(9450))
+
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+
+let arregloNuevo = [1, 1, 1, 1, 1]
+let arregloFalso = [1, 1, 1, 4, 5]
+
+const todoIgual = arr => arr.every(v => v === arr[0])
+
+console.log(todoIgual(arregloNuevo))
+
+console.log(todoIgual(arregloFalso))
 }
 
 function mesesDelAño(array) {
@@ -145,6 +202,18 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var cont = 0;
+   var newArray = [];
+ 
+   for (let i = 0; i < array.length; i++) {
+ 
+     array[i].includes("Enero") || array[i].includes("Marzo") || array[i].includes("Noviembre") ?
+       newArray.push(array[i]) && cont++ : false;
+ 
+ 
+   }
+ 
+   return cont !== 3 ? "No se encontraron los meses pedidos" : newArray;
 }
 
 function tablaDelSeis() {
@@ -157,7 +226,16 @@ function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   let mayores = []
+   for (var i = 0; i < array.length; i++) {
+      if (array[i] > 100) {
+         mayores.push(array[i])
+      }
+   }
+   return mayores
 }
+
+console.log(mayorACien(100, 4, 89, 200, 140, 89, 40, 240))
 
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪

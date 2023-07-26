@@ -126,7 +126,14 @@ function actualizarPassword(objetoUsuario, nuevaPassword) {
    // La nueva contraseña la recibes por parámetro.
    // Retornar el objeto.
    // Tu código:
+
+   var objetoUsuario = 
+   {
+      usuario: "Bryan22",
+      password: "1234567"
+   }
    
+ objetoUsuario.password["125369"]
 }
 
 function agregarAmigo(objetoUsuario, nuevoAmigo) {
